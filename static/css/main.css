@@ -66,3 +66,54 @@ body {
     padding: 0.5rem 2.5rem;
     align-self: flex-end;
 }
+
+.dates {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.dates_link {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+
+.dates_link_current {
+    background: bisque;
+}
+
+.dates_link:not(.dates_link_current):hover {
+    background: lightgray;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dates_link:first-of-type,
+.dates_link:last-of-type,
+.dates_link:nth-of-type(2),
+.dates_link:nth-last-of-type(2) {
+    display: none;
+}
+
+@media screen and (min-width: 25rem) {
+    .dates_link:nth-of-type(2),
+    .dates_link:nth-last-of-type(2) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 35rem) {
+    .dates_link:first-of-type,
+    .dates_link:last-of-type {
+        display: block;
+    }
+}
