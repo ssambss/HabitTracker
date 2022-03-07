@@ -3,11 +3,25 @@
 {% block main_content %} 
     <section class="habit_list">
         {% for habit in habits %} 
-            <div class="habit">
+            {% set completed = habit in completions %}
+            {% if completed %} 
+            <div class="habit completed">
                 <p class="habit_name">
                     {{ habit }}
                 </p>
+                <img class="habit_icon" src="/static/check-mark-black-outline-svgrepo-com.svg" alt="Checkmark">
             </div>
+             {% else %} 
+                <div class="habit">
+                    <form method="POST" class="habit_form" action="{{url_for('complete')}}">
+                        <input type="hidden" name="habit_name" value="{{ habit }}" />
+                        <input type="hidden" name="date" value="{{ selected_date }}" />
+                        <button type="submit" class="habit_button">
+                            {{ habit }}
+                        </button>
+                    </form>
+                </div>
+             {% endif %}
         {% endfor %}
     </section>
 {% endblock %}

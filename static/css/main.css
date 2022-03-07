@@ -117,3 +117,48 @@ body {
         display: block;
     }
 }
+
+.habit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: bisque;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+.habit:not(.completed) {
+    padding: 0;
+}
+
+.habit:not(.completed):hover {
+    background-color: blanchedalmond;
+}
+
+.habit_icon {
+    width: 1em;
+    height: 1em;
+}
+
+.habit_name {
+    margin: 0;
+}
+
+.habit_form {
+    width: 100%;
+}
+
+.habit_button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
